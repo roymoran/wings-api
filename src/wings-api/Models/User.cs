@@ -8,19 +8,23 @@ namespace wings_api.Models
     public class User
     {
         public int Id { get; set; }
-        public string First_Name { get; set; }
-        public string Last_Name { get; set; }
-        public int Age { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string DOB { get; set; }
         public string School { get; set; }
         public string Job { get; set; }
         public string Gender { get; set; } // male or female
-        public string Gender_Interested { get; set; } // male, female, or both
-        public int Age_Interested_Min { get; set; }
-        public int Age_Interested_Max { get; set; }
+        public string GenderInterested { get; set; } // male, female, or both
+        public int AgeInterestedMin { get; set; }
+        public int AgeInterestedMax { get; set; }
         public string Bio { get; set; }
-        public string Loves_One { get; set; }
-        public string Loves_Two { get; set; }
-        public string Loves_Three { get; set; }
+        public string LovesOne { get; set; }
+        public string LovesTwo { get; set; }
+        public string LovesThree { get; set; }
         public bool Onboarded { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool Active { get; set; }
+        public DateTime DateCreated { get; set; }
+
     }
 }
