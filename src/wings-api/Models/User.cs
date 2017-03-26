@@ -18,13 +18,21 @@ namespace wings_api.Models
         public int AgeInterestedMin { get; set; }
         public int AgeInterestedMax { get; set; }
         public string Bio { get; set; }
-        public string LovesOne { get; set; }
-        public string LovesTwo { get; set; }
-        public string LovesThree { get; set; }
         public bool Onboarded { get; set; }
         public string PhoneNumber { get; set; }
         public bool Active { get; set; }
         public DateTime DateCreated { get; set; }
+        public string LocationLatitude { get; set; }
+        public string LocationLongitude { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
+
+        public ICollection<UserFriend> UserFriends { get; set; }
+        public ICollection<UserPicture> UserPictures { get; set; }
+        public ICollection<UserBacklog> UserBacklogs { get; set; }
+        public ICollection<UserMatchlog> UserMatchlogs { get; set; }
+        public ICollection<UserInterest> UserInterests { get; set; }
 
     }
 }
