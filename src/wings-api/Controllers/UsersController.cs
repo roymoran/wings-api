@@ -13,8 +13,8 @@ namespace wings_api.Controllers
     {
         User[] users = new User[]
         {
-            new User { Id = 1, FirstName = "Roy", LastName = "Moran", School = "UIC", Job = "Consultant", Gender = "Male", GenderInterested = "Female", AgeInterestedMin = 18, AgeInterestedMax = 22, Bio = "Why, hello there.", LovesOne = "Mother nature", LovesTwo = "One Direction", LovesThree = "Nancy Pelosi", Onboarded = false},
-            new User { Id = 2, FirstName = "Aman", LastName = "Choudhury", School = "UIC", Job = "Finance", Gender = "Male", GenderInterested = "Female", AgeInterestedMin = 18, AgeInterestedMax = 30, Bio = "What is love, baby don't hurt me. Don't hurt me. No more.", LovesOne = "World Travel", LovesTwo = "Lifting Heavy", LovesThree = "Kanye West aka Yeezus", Onboarded = false}
+            new User { Id = 1, FirstName = "Roy", LastName = "Moran", School = "UIC", Job = "Consultant", Gender = "Male", GenderInterested = "Female", AgeInterestedMin = 18, AgeInterestedMax = 22, Bio = "Why, hello there.", Onboarded = false},
+            new User { Id = 2, FirstName = "Aman", LastName = "Choudhury", School = "UIC", Job = "Finance", Gender = "Male", GenderInterested = "Female", AgeInterestedMin = 18, AgeInterestedMax = 30, Bio = "What is love, baby don't hurt me. Don't hurt me. No more.", Onboarded = false}
         };
         
         // GET: api/values
