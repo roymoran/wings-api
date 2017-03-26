@@ -31,7 +31,7 @@ namespace wings_api.Models
         public ICollection<UserFriend> UserFriends { get; set; }
         public ICollection<UserPicture> UserPictures { get; set; }
         public ICollection<UserBacklog> UserBacklogs { get; set; }
-        public ICollection<UserMatchlog> UserMatchlogs { get; set; }
+        public ICollection<UserMatch> UserMatches { get; set; }
         public ICollection<UserInterest> UserInterests { get; set; }
 
     }
