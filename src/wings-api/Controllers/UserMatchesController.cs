@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace wings_api.Controllers
 {
     [Route("api/[controller]")]
-    public class UserMatchlogsController : Controller
+    public class UserMatchesController : Controller
     {
         // GET: api/values
         [HttpGet]
