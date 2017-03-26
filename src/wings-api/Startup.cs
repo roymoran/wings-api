@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
+using wings_api.Data;
 
 namespace wings_api
 {
@@ -29,6 +31,9 @@ namespace wings_api
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+
+            services.AddDbContext<WingsContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddMvc();
 
             // Register the Swagger generator, defining one or more Swagger documents
@@ -39,7 +44,7 @@ namespace wings_api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, WingsContext context)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -47,6 +52,8 @@ namespace wings_api
             app.UseMvc();
 
             app.UseMvcWithDefaultRoute();
+
+            //context.Database.EnsureCreated();
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
