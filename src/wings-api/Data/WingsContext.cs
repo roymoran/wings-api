@@ -16,7 +16,9 @@ namespace wings_api.Data
         public DbSet<User> Users { get; set; }
         public DbSet<UserFriend> UserFriends { get; set; }
         public DbSet<UserBacklog> UserBacklogs { get; set; }
-        public DbSet<UserMatchlog> UserMatchlogs { get; set; }
+        public DbSet<UserMatch> UserMatches { get; set; }
         public DbSet<UserChatlog> UserChatlogs { get; set; }
+        public DbSet<UserInterest> UserInterests { get; set; }
+        public DbSet<UserPicture> UserPictures { get; set; }
     }
 }
