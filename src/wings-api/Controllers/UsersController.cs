@@ -70,6 +70,10 @@ namespace wings_api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var user = new User { Id = id };
+            db.Users.Attach(user);
+            db.Users.Remove(user);
+            db.SaveChanges();
         }
     }
 }
