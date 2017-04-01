@@ -8,17 +8,15 @@ namespace wings_api.Models
 {
     public class UserFriend
     {
-        public int Id { get; set; }
+        public int Id { get; set; }        
         public int UserID { get; set; }
-        public int UserFriendID { get; set; }
-        public DateTime DateCreated { get; set; }
-
         [ForeignKey("UserID")]
-        [InverseProperty("UserFriends")]
         public User User { get; set; }
-
+        public int? UserFriendID { get; set; }
         [ForeignKey("UserFriendID")]
         [InverseProperty("UserFriends")]
         public User Friend { get; set; }
+        public DateTime DateCreated { get; set; }
+
     }
 }

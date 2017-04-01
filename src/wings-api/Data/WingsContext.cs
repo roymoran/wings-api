@@ -11,7 +11,9 @@ namespace wings_api.Data
     {
         public WingsContext(DbContextOptions<WingsContext> options) : base(options)
         {
+
         }
+
 
         public DbSet<User> Users { get; set; }
         public DbSet<UserFriend> UserFriends { get; set; }

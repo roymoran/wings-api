@@ -7,5 +7,7 @@ namespace wings_api.Models
 {
     public class UserChatlog
     {
+        public int Id { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

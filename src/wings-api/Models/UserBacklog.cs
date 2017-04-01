@@ -10,20 +10,15 @@ namespace wings_api.Models
     {
         public int Id { get; set; }
         public int UserID { get; set; }
-        public int UserPotentialMatchID { get; set; }
-        public int UserFriendID { get; set; }
-        public DateTime DateCreated { get; set; }
-
         [ForeignKey("UserID")]
-        [InverseProperty("UserBacklogs")]
         public User User { get; set; }
-
+        public int? UserFriendID { get; set; }
         [ForeignKey("UserFriendID")]
-        [InverseProperty("UserBacklogs")]
         public User Friend { get; set; }
-
+        public int? UserPotentialMatchID { get; set; }
         [ForeignKey("UserPotentialMatchID")]
         [InverseProperty("UserBacklogs")]
         public User PotentialMatch { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

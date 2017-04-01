@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,10 +29,15 @@ namespace wings_api.Models
         public string State { get; set; }
         public string Zip { get; set; }
 
+        [JsonIgnore]
         public ICollection<UserFriend> UserFriends { get; set; }
+        [JsonIgnore]
         public ICollection<UserPicture> UserPictures { get; set; }
+        [JsonIgnore]
         public ICollection<UserBacklog> UserBacklogs { get; set; }
+        [JsonIgnore]
         public ICollection<UserMatch> UserMatches { get; set; }
+        [JsonIgnore]
         public ICollection<UserInterest> UserInterests { get; set; }
 
     }
