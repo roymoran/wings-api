@@ -20,11 +20,7 @@ namespace wings_api.Controllers
         {
             db = context;
         }
-        User[] users = new User[]
-        {
-            new User { Id = 1, FirstName = "Roy", LastName = "Moran", School = "UIC", Job = "Consultant", Gender = "Male", GenderInterested = "Female", AgeInterestedMin = 18, AgeInterestedMax = 22, Bio = "Why, hello there.", Onboarded = false},
-            new User { Id = 2, FirstName = "Aman", LastName = "Choudhury", School = "UIC", Job = "Finance", Gender = "Male", GenderInterested = "Female", AgeInterestedMin = 18, AgeInterestedMax = 30, Bio = "What is love, baby don't hurt me. Don't hurt me. No more.", Onboarded = false}
-        };
+        
 
         /// <summary>
         /// Retrieve all users
@@ -32,8 +28,8 @@ namespace wings_api.Controllers
         [HttpGet]
         public IEnumerable<User> GetAllUsers()
         {
-            var user = new User();
-            
+            IEnumerable<User> users = new User[] { };
+            users = db.Users.ToList();
             return users;
         }
 
