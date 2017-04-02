@@ -74,6 +74,7 @@ namespace wings_api.Controllers
             userInternal.GenderInterested = user.GenderInterested;
             userInternal.Job = user.Job;
             userInternal.School = user.School;
+            userInternal.DateUpdated = DateTime.UtcNow;
             
             db.Entry(userInternal).State = EntityState.Modified;
 
