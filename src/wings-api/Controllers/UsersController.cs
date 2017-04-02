@@ -67,14 +67,25 @@ namespace wings_api.Controllers
         {
             // Creating new user and updating permissable fields from paseed in user
             User userInternal = db.Users.Find(user.Id);
-         
+
+            userInternal.FirstName = user.FirstName;
+            userInternal.LastName = user.LastName;
+            userInternal.DOB = user.DOB;
             userInternal.AgeInterestedMax = user.AgeInterestedMax;
             userInternal.AgeInterestedMin = user.AgeInterestedMin;
             userInternal.Bio = user.Bio;
+            userInternal.Gender = user.Gender;
             userInternal.GenderInterested = user.GenderInterested;
             userInternal.Job = user.Job;
             userInternal.School = user.School;
+            userInternal.PhoneNumber = user.PhoneNumber;
+            userInternal.City = user.City;
+            userInternal.State = user.State;
+            userInternal.Zip = user.Zip;
+            userInternal.Latitude = user.Latitude;
+            userInternal.Longitude = user.Longitude;
             userInternal.DateUpdated = DateTime.UtcNow;
+            userInternal.Active = user.Active;
             
             db.Entry(userInternal).State = EntityState.Modified;
 
