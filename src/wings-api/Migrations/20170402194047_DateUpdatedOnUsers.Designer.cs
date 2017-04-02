@@ -8,9 +8,10 @@ using wings_api.Data;
 namespace wings_api.Migrations
 {
     [DbContext(typeof(WingsContext))]
-    partial class WingsContextModelSnapshot : ModelSnapshot
+    [Migration("20170402194047_DateUpdatedOnUsers")]
+    partial class DateUpdatedOnUsers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")

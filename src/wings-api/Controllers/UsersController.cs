@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using wings_api.Data;
 using wings_api.Models;
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
@@ -61,9 +62,22 @@ namespace wings_api.Controllers
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        public void Put([FromBody]User user)
         {
+            // Creating new user and updating permissable fields from paseed in user
+            User userInternal = db.Users.Find(user.Id);
+         
+            userInternal.AgeInterestedMax = user.AgeInterestedMax;
+            userInternal.AgeInterestedMin = user.AgeInterestedMin;
+            userInternal.Bio = user.Bio;
+            userInternal.GenderInterested = user.GenderInterested;
+            userInternal.Job = user.Job;
+            userInternal.School = user.School;
+            
+            db.Entry(userInternal).State = EntityState.Modified;
+
+            db.SaveChanges();
         }
 
         // DELETE api/values/5
