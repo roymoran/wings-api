@@ -8,7 +8,7 @@ using wings_api.Data;
 namespace wings_api.Migrations
 {
     [DbContext(typeof(WingsContext))]
-    [Migration("20170401044024_InitialMigration")]
+    [Migration("20170418181348_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,8 @@ namespace wings_api.Migrations
 
                     b.Property<DateTime>("DateCreated");
 
+                    b.Property<DateTime>("DateUpdated");
+
                     b.Property<string>("FirstName");
 
                     b.Property<string>("Gender");
@@ -46,9 +48,9 @@ namespace wings_api.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<string>("Latitude");
+                    b.Property<double>("Latitude");
 
-                    b.Property<string>("Longitude");
+                    b.Property<double>("Longitude");
 
                     b.Property<bool>("Onboarded");
 

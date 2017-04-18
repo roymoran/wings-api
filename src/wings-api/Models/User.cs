@@ -24,8 +24,8 @@ namespace wings_api.Models
         public bool Active { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
-        public string Latitude { get; set; }
-        public string Longitude { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }

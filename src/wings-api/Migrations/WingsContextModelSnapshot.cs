@@ -47,9 +47,9 @@ namespace wings_api.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<string>("Latitude");
+                    b.Property<double>("Latitude");
 
-                    b.Property<string>("Longitude");
+                    b.Property<double>("Longitude");
 
                     b.Property<bool>("Onboarded");
 
